@@ -8,7 +8,9 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 global.appRoot = path.resolve(__dirname);
-
+/**
+  * Requiring inventors json placed in model folder
+*/
 var inventorList  = require('./model/inventors.json') ;
 var inventors = require('./routes/inventors');
 
@@ -31,6 +33,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+/**
+  * Homework begins here.
+  * Have used jade template to show the list
+  */
 app.use('/inventor', inventors);
 
 app.get('/inventors', function(req, res, next) {
