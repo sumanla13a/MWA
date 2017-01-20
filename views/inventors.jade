@@ -1,0 +1,13 @@
+extends layout
+block content
+	table
+		tr
+			th First
+			th Last
+			th Year
+		tb
+			each item in inventors
+				tr
+					td= item.first
+					td= item.last
+					td= item.year
